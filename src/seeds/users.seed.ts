@@ -35,16 +35,15 @@ export class UsersSeed implements OnSeederInit {
                 contract: 16,
             },
         ];
-        console.log(data)
         return data;
     }
-/*
+
     everyone(data) {
         if (data.password) {
-            const salt = genSaltSync(10);
+            const salt = genSaltSync(5);
             data.password = hashSync(data.password, salt);
             data.salt = salt;
         }
         return data;
-    }*/
+    }
 }

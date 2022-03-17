@@ -19,7 +19,7 @@ import { UserRolesSeed } from 'src/seeds/get-roles.seed';
         SequelizeModule.forFeature([User, Role, UserRoles]),
         SeederModule.forFeature([RoleSeed]),
         SeederModule.forFeature([UsersSeed]),
-        SeederModule.forFeature([UserRolesSeed]),
+        //SeederModule.forFeature([UserRolesSeed]), // Баг библиотеки
         RolesModule,
         forwardRef(() => AuthModule)
     ],
