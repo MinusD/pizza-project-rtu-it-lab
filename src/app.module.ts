@@ -9,6 +9,7 @@ import { User } from './users/user.model';
 import { RolesModule } from './roles/roles.module';
 import { Role } from './roles/roles.model';
 import { UserRoles } from './roles/user-roles.model';
+import { SeederModule } from 'nestjs-sequelize-seeder';
 
 // @ts-ignore
 @Module({
@@ -30,9 +31,14 @@ import { UserRoles } from './roles/user-roles.model';
           models: [User, Role, UserRoles],
           autoLoadModels: true,
       }),
+      SeederModule.forRoot({
+          // Activate this if you want to run the seeders if the table is empty in the database
+          runOnlyIfTableIsEmpty: true,
+      }),
       UsersModule,
       AuthModule,
       RolesModule,
+
   ],
 })
 export class AppModule {}

@@ -10,6 +10,7 @@ export class UsersService {
     }
 
     async getAllUsers() {
+        // @ts-ignore
         const users = await this.userRepository.findAll({ include: { all: true } });
         return users;
     }
