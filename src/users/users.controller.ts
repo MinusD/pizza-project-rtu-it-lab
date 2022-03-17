@@ -1,5 +1,7 @@
 import { Controller, Get, UseGuards } from '@nestjs/common';
 import {ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { RolesGuard } from 'src/auth/role.guard';
+import { Roles } from 'src/auth/roles-auth.decorator';
 import { User } from './user.model';
 import { UsersService } from './users.service';
 
@@ -11,10 +13,12 @@ export class UsersController {
 
     @ApiOperation({ summary: 'Список пользователей' })
     @ApiResponse({ status: 200, type: [User] })
-    //@Roles('Admin')
-    //@UseGuards(RolesGuard)
+    @Roles('owner')
+    @UseGuards(RolesGuard)
     @Get()
     getAll() {
         return this.userService.getAllUsers();
     }
+
+
 }

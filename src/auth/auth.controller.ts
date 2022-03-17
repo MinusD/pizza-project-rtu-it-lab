@@ -8,9 +8,9 @@ import { AuthService } from './auth.service';
 export class AuthController {
     constructor(private authService: AuthService) {
     }
-   /*
+
     @Post('/login')
     login(@Body() userDto: CreateUserDto) {
         return this.authService.login(userDto);
-    }*/
+    }
 }
