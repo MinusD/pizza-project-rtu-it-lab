@@ -18,4 +18,7 @@ export class CreateUserDto {
 
     @ApiProperty({example: '146', description: 'Номер договора'})
     readonly contract: number;
+
+    @ApiProperty({example: 'admin', description: 'Роль пользователя'})
+    readonly role: string;
 }

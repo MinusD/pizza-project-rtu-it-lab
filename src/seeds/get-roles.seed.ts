@@ -4,7 +4,7 @@ import { User } from 'src/users/user.model';
 
 @Seeder({
     model: UserRoles,
-    unique: ['userId']
+    //unique: ['userId']
 })
 export class UserRolesSeed implements OnSeederInit {
     run() {
