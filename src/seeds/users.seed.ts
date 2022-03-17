@@ -1,6 +1,7 @@
 import { Seeder, OnSeederInit } from 'nestjs-sequelize-seeder';
 import { User } from 'src/users/user.model';
-
+import * as bcrypt from 'bcryptjs';
+import { genSaltSync, hashSync } from 'bcryptjs';
 
 @Seeder({
     model: User,
@@ -34,12 +35,16 @@ export class UsersSeed implements OnSeederInit {
                 contract: 16,
             },
         ];
-        return data;
-        
-    }
-
-    everyone(data) {
         console.log(data)
         return data;
     }
+/*
+    everyone(data) {
+        if (data.password) {
+            const salt = genSaltSync(10);
+            data.password = hashSync(data.password, salt);
+            data.salt = salt;
+        }
+        return data;
+    }*/
 }

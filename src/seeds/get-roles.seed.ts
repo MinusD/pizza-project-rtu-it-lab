@@ -25,7 +25,7 @@ export class UserRolesSeed implements OnSeederInit {
             {
                 userId: 4,
                 roleId: 4,
-            },
+            }
         ];
         return data;
     }

@@ -31,7 +31,7 @@ import { SeederModule } from 'nestjs-sequelize-seeder';
           models: [User, Role, UserRoles],
           autoLoadModels: true,
       }),
-      // Вызываем сиды
+      // Настройки сидеров
       SeederModule.forRoot({
           runOnlyIfTableIsEmpty: true,
       }),

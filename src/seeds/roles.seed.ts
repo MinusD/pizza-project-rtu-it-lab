@@ -23,10 +23,9 @@ export class RoleSeed implements OnSeederInit {
             {
                 value: 'kitchenWorker',
                 description: 'Работник кухни',
-            },
+            }
         ];
         console.log(data)
-
         return data;
     }
 
